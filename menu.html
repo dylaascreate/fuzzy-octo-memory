@@ -25,7 +25,30 @@
       <li><a href="menu.html" class="nav__active">Menu</a></li>
       <li><a href="index.html#visit">Visit Us</a></li>
     </ul>
+    <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
   </nav>
+
+  <!-- Cart Sidebar -->
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+    <div class="cart-sidebar__header">
+      <h3>Your Order</h3>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-sidebar__footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span id="cartTotal">$0.00</span>
+      </div>
+      <button class="btn-order" id="orderBtn" disabled>Order Now</button>
+    </div>
+  </aside>
+  <div class="cart-overlay" id="cartOverlay"></div>
 
   <main>
 
@@ -34,7 +57,7 @@
       <div class="menu-hero__content">
         <span class="section__label">Our Selections</span>
         <h1>The Menu</h1>
-        <p>Every cup tells a story. Explore our curated selection of teas, each chosen for its character, origin, and the ritual it invites.</p>
+        <p>Every cup tells a story. Explore our curated teas, seasonal specials, and handcrafted bites.</p>
       </div>
     </section>
 
@@ -48,51 +71,67 @@
         </div>
         <div class="menu-grid">
 
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Aged Pu'er</h3>
-              <span class="menu-card__price">$18</span>
+          <article class="menu-card reveal" data-name="Aged Pu'er" data-price="18">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Aged Pu'er tea being poured" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Yunnan Province, China · Fermented</p>
-            <p class="menu-card__desc">Earthy, deep, and complex. Pressed into cakes and aged for years, each steep reveals layers of dark wood, dried fruit, and forest floor.</p>
-            <div class="menu-card__tags">
-              <span>Earthy</span><span>Full-bodied</span><span>Aged</span>
-            </div>
-          </article>
-
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Tieguanyin Oolong</h3>
-              <span class="menu-card__price">$14</span>
-            </div>
-            <p class="menu-card__origin">Fujian Province, China · Lightly Oxidised</p>
-            <p class="menu-card__desc">The Iron Goddess of Mercy. A floral, orchid-like fragrance that blooms across multiple infusions, finishing with a lingering sweetness.</p>
-            <div class="menu-card__tags">
-              <span>Floral</span><span>Orchid</span><span>Sweet</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Aged Pu'er</h3>
+                <span class="menu-card__price">$18</span>
+              </div>
+              <p class="menu-card__origin">Yunnan Province, China · Fermented</p>
+              <p class="menu-card__desc">Earthy, deep, and complex. Pressed into cakes and aged for years, each steep reveals layers of dark wood, dried fruit, and forest floor.</p>
+              <div class="menu-card__tags"><span>Earthy</span><span>Full-bodied</span><span>Aged</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Da Hong Pao</h3>
-              <span class="menu-card__price">$22</span>
+          <article class="menu-card reveal" data-name="Tieguanyin Oolong" data-price="14">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=600&q=80" alt="Tieguanyin oolong tea" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Wuyi Mountains, China · Heavily Roasted</p>
-            <p class="menu-card__desc">Big Red Robe — one of China's most revered oolongs. Roasted over charcoal for a rich, mineral depth with notes of caramel and dark chocolate.</p>
-            <div class="menu-card__tags">
-              <span>Roasted</span><span>Mineral</span><span>Rich</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Tieguanyin Oolong</h3>
+                <span class="menu-card__price">$14</span>
+              </div>
+              <p class="menu-card__origin">Fujian Province, China · Lightly Oxidised</p>
+              <p class="menu-card__desc">The Iron Goddess of Mercy. A floral, orchid-like fragrance that blooms across multiple infusions, finishing with a lingering sweetness.</p>
+              <div class="menu-card__tags"><span>Floral</span><span>Orchid</span><span>Sweet</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>White Peony (Bai Mudan)</h3>
-              <span class="menu-card__price">$12</span>
+          <article class="menu-card reveal" data-name="Da Hong Pao" data-price="22">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1597318181409-cf64d0b5d8a2?w=600&q=80" alt="Da Hong Pao oolong tea" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Fujian Province, China · White Tea</p>
-            <p class="menu-card__desc">Delicate and pale, with a soft sweetness and subtle floral notes. Minimal processing preserves the natural character of the young leaves.</p>
-            <div class="menu-card__tags">
-              <span>Delicate</span><span>Floral</span><span>Light</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Da Hong Pao</h3>
+                <span class="menu-card__price">$22</span>
+              </div>
+              <p class="menu-card__origin">Wuyi Mountains, China · Heavily Roasted</p>
+              <p class="menu-card__desc">Big Red Robe — one of China's most revered oolongs. Roasted over charcoal for a rich, mineral depth with notes of caramel and dark chocolate.</p>
+              <div class="menu-card__tags"><span>Roasted</span><span>Mineral</span><span>Rich</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="White Peony (Bai Mudan)" data-price="12">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=600&q=80" alt="White Peony tea" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>White Peony (Bai Mudan)</h3>
+                <span class="menu-card__price">$12</span>
+              </div>
+              <p class="menu-card__origin">Fujian Province, China · White Tea</p>
+              <p class="menu-card__desc">Delicate and pale, with a soft sweetness and subtle floral notes. Minimal processing preserves the natural character of the young leaves.</p>
+              <div class="menu-card__tags"><span>Delicate</span><span>Floral</span><span>Light</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
@@ -110,51 +149,67 @@
         </div>
         <div class="menu-grid">
 
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Ceremonial Matcha</h3>
-              <span class="menu-card__price">$16</span>
+          <article class="menu-card reveal" data-name="Ceremonial Matcha" data-price="16">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=600&q=80" alt="Ceremonial matcha being whisked" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Uji, Kyoto, Japan · Stone-ground</p>
-            <p class="menu-card__desc">First-flush shade-grown leaves, stone-ground to a vivid powder. Whisked to a luminous froth — grassy, umami-rich, and deeply serene.</p>
-            <div class="menu-card__tags">
-              <span>Umami</span><span>Grassy</span><span>Vibrant</span>
-            </div>
-          </article>
-
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Gyokuro</h3>
-              <span class="menu-card__price">$20</span>
-            </div>
-            <p class="menu-card__origin">Yame, Fukuoka, Japan · Shade-grown</p>
-            <p class="menu-card__desc">Japan's most prized loose-leaf green tea. Shaded for three weeks before harvest, producing an intensely sweet, oceanic depth unlike any other.</p>
-            <div class="menu-card__tags">
-              <span>Sweet</span><span>Oceanic</span><span>Rare</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Ceremonial Matcha</h3>
+                <span class="menu-card__price">$16</span>
+              </div>
+              <p class="menu-card__origin">Uji, Kyoto, Japan · Stone-ground</p>
+              <p class="menu-card__desc">First-flush shade-grown leaves, stone-ground to a vivid powder. Whisked to a luminous froth — grassy, umami-rich, and deeply serene.</p>
+              <div class="menu-card__tags"><span>Umami</span><span>Grassy</span><span>Vibrant</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Hojicha</h3>
-              <span class="menu-card__price">$10</span>
+          <article class="menu-card reveal" data-name="Gyokuro" data-price="20">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=600&q=80" alt="Gyokuro green tea" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Kyoto, Japan · Roasted Green Tea</p>
-            <p class="menu-card__desc">Roasted over charcoal at high heat, transforming green tea into a warm, toasty brew with low caffeine and a comforting caramel finish.</p>
-            <div class="menu-card__tags">
-              <span>Toasty</span><span>Caramel</span><span>Low Caffeine</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Gyokuro</h3>
+                <span class="menu-card__price">$20</span>
+              </div>
+              <p class="menu-card__origin">Yame, Fukuoka, Japan · Shade-grown</p>
+              <p class="menu-card__desc">Japan's most prized loose-leaf green tea. Shaded for three weeks before harvest, producing an intensely sweet, oceanic depth unlike any other.</p>
+              <div class="menu-card__tags"><span>Sweet</span><span>Oceanic</span><span>Rare</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <div class="menu-card__top">
-              <h3>Genmaicha</h3>
-              <span class="menu-card__price">$10</span>
+          <article class="menu-card reveal" data-name="Hojicha" data-price="10">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=600&q=80" alt="Hojicha roasted green tea" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Japan · Green Tea with Roasted Rice</p>
-            <p class="menu-card__desc">Sencha blended with roasted brown rice. Nutty, warm, and approachable — a beloved everyday tea with a distinctly Japanese soul.</p>
-            <div class="menu-card__tags">
-              <span>Nutty</span><span>Warm</span><span>Approachable</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Hojicha</h3>
+                <span class="menu-card__price">$10</span>
+              </div>
+              <p class="menu-card__origin">Kyoto, Japan · Roasted Green Tea</p>
+              <p class="menu-card__desc">Roasted over charcoal at high heat, transforming green tea into a warm, toasty brew with low caffeine and a comforting caramel finish.</p>
+              <div class="menu-card__tags"><span>Toasty</span><span>Caramel</span><span>Low Caffeine</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="Genmaicha" data-price="10">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?w=600&q=80" alt="Genmaicha tea with roasted rice" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Genmaicha</h3>
+                <span class="menu-card__price">$10</span>
+              </div>
+              <p class="menu-card__origin">Japan · Green Tea with Roasted Rice</p>
+              <p class="menu-card__desc">Sencha blended with roasted brown rice. Nutty, warm, and approachable — a beloved everyday tea with a distinctly Japanese soul.</p>
+              <div class="menu-card__tags"><span>Nutty</span><span>Warm</span><span>Approachable</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
@@ -162,7 +217,7 @@
       </div>
     </section>
 
-    <!-- Seasonal & Specials -->
+    <!-- Seasonal -->
     <section class="menu-section section">
       <div class="container">
         <div class="menu-section__header reveal">
@@ -170,29 +225,147 @@
           <h2>Chef's Selection</h2>
           <p class="menu-section__desc">Rotating specials curated by our tea masters — available while stocks last.</p>
         </div>
-        <div class="menu-grid menu-grid--wide">
+        <div class="menu-grid">
 
-          <article class="menu-card menu-card--featured reveal">
-            <div class="menu-card__top">
-              <h3>Silver Needle (Bai Hao Yinzhen)</h3>
-              <span class="menu-card__price">$28</span>
+          <article class="menu-card menu-card--featured reveal" data-name="Silver Needle (Bai Hao Yinzhen)" data-price="28">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=600&q=80" alt="Silver Needle white tea" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Fuding, Fujian, China · White Tea · Seasonal</p>
-            <p class="menu-card__desc">The rarest of white teas — only the first unopened buds, harvested in early spring. Silky, honeyed, and impossibly light. A once-a-season offering.</p>
-            <div class="menu-card__tags">
-              <span>Rare</span><span>Honeyed</span><span>Spring Harvest</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Silver Needle</h3>
+                <span class="menu-card__price">$28</span>
+              </div>
+              <p class="menu-card__origin">Fuding, Fujian, China · White Tea · Seasonal</p>
+              <p class="menu-card__desc">The rarest of white teas — only the first unopened buds, harvested in early spring. Silky, honeyed, and impossibly light.</p>
+              <div class="menu-card__tags"><span>Rare</span><span>Honeyed</span><span>Spring Harvest</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
-          <article class="menu-card menu-card--featured reveal">
-            <div class="menu-card__top">
-              <h3>Matcha x Pu'er Blend</h3>
-              <span class="menu-card__price">$20</span>
+          <article class="menu-card menu-card--featured reveal" data-name="Matcha × Pu'er Blend" data-price="20">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?w=600&q=80" alt="Matcha and Pu'er fusion blend" loading="lazy" />
             </div>
-            <p class="menu-card__origin">Japan × Yunnan · House Fusion</p>
-            <p class="menu-card__desc">Our signature creation — ceremonial matcha layered over a base of aged Pu'er. The meeting point of two traditions in a single, unforgettable cup.</p>
-            <div class="menu-card__tags">
-              <span>Fusion</span><span>Signature</span><span>Bold</span>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Matcha × Pu'er Blend</h3>
+                <span class="menu-card__price">$20</span>
+              </div>
+              <p class="menu-card__origin">Japan × Yunnan · House Fusion</p>
+              <p class="menu-card__desc">Our signature creation — ceremonial matcha layered over aged Pu'er. The meeting point of two traditions in a single, unforgettable cup.</p>
+              <div class="menu-card__tags"><span>Fusion</span><span>Signature</span><span>Bold</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Cookies & Small Bites -->
+    <section class="menu-section menu-section--alt section">
+      <div class="container">
+        <div class="menu-section__header reveal">
+          <span class="section__label">Cookies &amp; Small Bites</span>
+          <h2>To Accompany Your Cup</h2>
+          <p class="menu-section__desc">Handcrafted in-house daily. Each bite is designed to complement the teas — never overpower them.</p>
+        </div>
+        <div class="menu-grid">
+
+          <article class="menu-card reveal" data-name="Matcha Shortbread" data-price="6">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&q=80" alt="Matcha shortbread cookies" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Matcha Shortbread</h3>
+                <span class="menu-card__price">$6</span>
+              </div>
+              <p class="menu-card__origin">House-made · 3 pieces</p>
+              <p class="menu-card__desc">Buttery, crumbly shortbread infused with ceremonial-grade matcha. A gentle bitterness that pairs beautifully with any green tea.</p>
+              <div class="menu-card__tags"><span>Buttery</span><span>Matcha</span><span>Crisp</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="Black Sesame Mochi" data-price="7">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=80" alt="Black sesame mochi" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Black Sesame Mochi</h3>
+                <span class="menu-card__price">$7</span>
+              </div>
+              <p class="menu-card__origin">House-made · 2 pieces</p>
+              <p class="menu-card__desc">Soft, chewy rice cake filled with a rich black sesame paste. A classic Japanese confection that melts alongside a warm cup of Hojicha.</p>
+              <div class="menu-card__tags"><span>Chewy</span><span>Nutty</span><span>Japanese</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="Osmanthus Almond Cookies" data-price="6">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80" alt="Osmanthus almond cookies" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Osmanthus Almond Cookies</h3>
+                <span class="menu-card__price">$6</span>
+              </div>
+              <p class="menu-card__origin">House-made · 3 pieces</p>
+              <p class="menu-card__desc">A traditional Chinese almond cookie delicately scented with dried osmanthus flowers. Light, fragrant, and perfectly balanced.</p>
+              <div class="menu-card__tags"><span>Fragrant</span><span>Almond</span><span>Chinese</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="Red Bean Dorayaki" data-price="8">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Red bean dorayaki pancake" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Red Bean Dorayaki</h3>
+                <span class="menu-card__price">$8</span>
+              </div>
+              <p class="menu-card__origin">House-made · 1 piece</p>
+              <p class="menu-card__desc">Two fluffy honey pancakes sandwiching a generous filling of sweet azuki red bean paste. A beloved Japanese street snack, elevated.</p>
+              <div class="menu-card__tags"><span>Sweet</span><span>Fluffy</span><span>Japanese</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="Pineapple Tart" data-price="7">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&q=80" alt="Pineapple tart" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Pineapple Tart</h3>
+                <span class="menu-card__price">$7</span>
+              </div>
+              <p class="menu-card__origin">House-made · 3 pieces</p>
+              <p class="menu-card__desc">A Southeast Asian classic — buttery pastry encasing a slow-cooked pineapple jam. Tangy, sweet, and irresistibly moreish alongside oolong.</p>
+              <div class="menu-card__tags"><span>Tangy</span><span>Buttery</span><span>Classic</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
+            </div>
+          </article>
+
+          <article class="menu-card reveal" data-name="Seasonal Wagashi" data-price="9">
+            <div class="menu-card__img">
+              <img src="https://images.unsplash.com/photo-1607301405390-d831c242f59b?w=600&q=80" alt="Seasonal wagashi Japanese confection" loading="lazy" />
+            </div>
+            <div class="menu-card__body">
+              <div class="menu-card__top">
+                <h3>Seasonal Wagashi</h3>
+                <span class="menu-card__price">$9</span>
+              </div>
+              <p class="menu-card__origin">House-made · 2 pieces · Changes monthly</p>
+              <p class="menu-card__desc">Traditional Japanese confections shaped to reflect the current season. Ask your server for today's selection — always a small, edible work of art.</p>
+              <div class="menu-card__tags"><span>Seasonal</span><span>Artisan</span><span>Wagashi</span></div>
+              <button class="add-to-cart">+ Add to Order</button>
             </div>
           </article>
 
@@ -203,7 +376,7 @@
     <!-- Note -->
     <div class="menu-note reveal">
       <div class="container">
-        <p>All teas are served with filtered spring water, heated to the optimal temperature for each variety. Refills available on request. Prices are per session.</p>
+        <p>All teas are served with filtered spring water at optimal temperature. Bites are made fresh daily and may contain nuts, gluten, or dairy. Please inform us of any allergies.</p>
       </div>
     </div>
 
@@ -215,5 +388,6 @@
   </footer>
 
   <script src="main.js"></script>
+  <script src="cart.js"></script>
 </body>
 </html>

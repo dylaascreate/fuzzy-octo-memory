@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout — dsy teahouse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="payment.css" />
+</head>
+<body>
+
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav__logo">dsy teahouse</a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+    </ul>
+  </nav>
+
+  <main class="checkout">
+    <div class="checkout__grid container">
+
+      <!-- Order Summary -->
+      <section class="order-summary">
+        <h2>Order Summary</h2>
+        <div id="summaryItems" class="summary-items"></div>
+        <div class="summary-divider"></div>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Service charge (10%)</span>
+          <span id="serviceCharge">$0.00</span>
+        </div>
+        <div class="summary-row summary-row--total">
+          <span>Total</span>
+          <span id="grandTotal">$0.00</span>
+        </div>
+        <a href="menu.html" class="back-link">← Edit Order</a>
+      </section>
+
+      <!-- Payment Form -->
+      <section class="payment-form">
+        <h2>Payment Details</h2>
+
+        <!-- Payment method tabs -->
+        <div class="pay-tabs" role="tablist">
+          <button class="pay-tab active" data-tab="card" role="tab" aria-selected="true">Credit / Debit Card</button>
+          <button class="pay-tab" data-tab="paynow" role="tab" aria-selected="false">PayNow</button>
+          <button class="pay-tab" data-tab="cash" role="tab" aria-selected="false">Pay at Counter</button>
+        </div>
+
+        <!-- Card -->
+        <div class="pay-panel active" id="tab-card">
+          <div class="form-group">
+            <label for="cardName">Name on card</label>
+            <input type="text" id="cardName" placeholder="[Full Name]" autocomplete="cc-name" />
+          </div>
+          <div class="form-group">
+            <label for="cardNumber">Card number</label>
+            <input type="text" id="cardNumber" placeholder="•••• •••• •••• ••••" maxlength="19" autocomplete="cc-number" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cardExpiry">Expiry</label>
+              <input type="text" id="cardExpiry" placeholder="MM / YY" maxlength="7" autocomplete="cc-exp" />
+            </div>
+            <div class="form-group">
+              <label for="cardCvc">CVC</label>
+              <input type="text" id="cardCvc" placeholder="•••" maxlength="4" autocomplete="cc-csc" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email (receipt)</label>
+            <input type="email" id="email" placeholder="[your@email.com]" autocomplete="email" />
+          </div>
+          <button class="btn-pay" id="payBtn">Confirm &amp; Pay</button>
+        </div>
+
+        <!-- PayNow -->
+        <div class="pay-panel" id="tab-paynow">
+          <div class="paynow-box">
+            <p>Scan the QR code below with your banking app to complete payment.</p>
+            <div class="qr-placeholder" aria-label="PayNow QR code placeholder">
+              <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- QR pattern (decorative) -->
+                <rect width="120" height="120" fill="#F5F2EB"/>
+                <rect x="10" y="10" width="35" height="35" rx="2" fill="none" stroke="#2C2C2C" stroke-width="3"/>
+                <rect x="17" y="17" width="21" height="21" rx="1" fill="#2C2C2C"/>
+                <rect x="75" y="10" width="35" height="35" rx="2" fill="none" stroke="#2C2C2C" stroke-width="3"/>
+                <rect x="82" y="17" width="21" height="21" rx="1" fill="#2C2C2C"/>
+                <rect x="10" y="75" width="35" height="35" rx="2" fill="none" stroke="#2C2C2C" stroke-width="3"/>
+                <rect x="17" y="82" width="21" height="21" rx="1" fill="#2C2C2C"/>
+                <rect x="55" y="10" width="8" height="8" fill="#2C2C2C"/>
+                <rect x="55" y="22" width="8" height="8" fill="#2C2C2C"/>
+                <rect x="10" y="55" width="8" height="8" fill="#2C2C2C"/>
+                <rect x="22" y="55" width="8" height="8" fill="#2C2C2C"/>
+                <rect x="55" y="55" width="8" height="8" fill="#4A5D23"/>
+                <rect x="67" y="55" width="8" height="8" fill="#4A5D23"/>
+                <rect x="79" y="55" width="8" height="8" fill="#4A5D23"/>
+                <rect x="55" y="67" width="8" height="8" fill="#4A5D23"/>
+                <rect x="79" y="67" width="8" height="8" fill="#4A5D23"/>
+                <rect x="55" y="79" width="8" height="8" fill="#4A5D23"/>
+                <rect x="67" y="79" width="8" height="8" fill="#4A5D23"/>
+                <rect x="91" y="67" width="8" height="8" fill="#2C2C2C"/>
+                <rect x="103" y="55" width="8" height="8" fill="#2C2C2C"/>
+                <rect x="103" y="79" width="8" height="8" fill="#2C2C2C"/>
+              </svg>
+            </div>
+            <p class="paynow-ref">UEN: <strong>202600001A</strong></p>
+            <p class="paynow-amount">Amount: <strong id="paynowAmount">$0.00</strong></p>
+            <button class="btn-pay" id="paynowConfirm">I've Completed Payment</button>
+          </div>
+        </div>
+
+        <!-- Pay at Counter -->
+        <div class="pay-panel" id="tab-cash">
+          <div class="cash-box">
+            <div class="cash-icon">🍵</div>
+            <h3>Pay at the Counter</h3>
+            <p>Your order has been noted. Please proceed to the counter to complete payment. We accept cash, NETS, and all major cards.</p>
+            <p class="cash-ref">Show this screen to our staff.</p>
+            <div class="cash-order-ref" id="cashRef">Order #<span></span></div>
+            <button class="btn-pay" id="cashConfirm">Place Order</button>
+          </div>
+        </div>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Success Modal -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__icon">✓</div>
+      <h3 id="modalTitle">Order Placed</h3>
+      <p id="modalMsg">Thank you. Your order is being prepared.</p>
+      <a href="menu.html" class="btn-pay" style="display:inline-block;text-align:center;text-decoration:none;">Back to Menu</a>
+    </div>
+  </div>
+
+  <script src="payment.js"></script>
+</body>
+</html>
