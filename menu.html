@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu — dsy teahouse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav__logo">dsy teahouse</a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#philosophy">Philosophy</a></li>
+      <li><a href="index.html#offerings">Offerings</a></li>
+      <li><a href="menu.html" class="nav__active">Menu</a></li>
+      <li><a href="index.html#visit">Visit Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="menu-hero">
+      <div class="menu-hero__content">
+        <span class="section__label">Our Selections</span>
+        <h1>The Menu</h1>
+        <p>Every cup tells a story. Explore our curated selection of teas, each chosen for its character, origin, and the ritual it invites.</p>
+      </div>
+    </section>
+
+    <!-- Chinese Teas -->
+    <section class="menu-section section">
+      <div class="container">
+        <div class="menu-section__header reveal">
+          <span class="section__label">Chinese Tradition</span>
+          <h2>Gongfu Teas</h2>
+          <p class="menu-section__desc">Brewed in the communal Gongfu style — multiple short infusions that reveal the tea's full depth over time.</p>
+        </div>
+        <div class="menu-grid">
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Aged Pu'er</h3>
+              <span class="menu-card__price">$18</span>
+            </div>
+            <p class="menu-card__origin">Yunnan Province, China · Fermented</p>
+            <p class="menu-card__desc">Earthy, deep, and complex. Pressed into cakes and aged for years, each steep reveals layers of dark wood, dried fruit, and forest floor.</p>
+            <div class="menu-card__tags">
+              <span>Earthy</span><span>Full-bodied</span><span>Aged</span>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Tieguanyin Oolong</h3>
+              <span class="menu-card__price">$14</span>
+            </div>
+            <p class="menu-card__origin">Fujian Province, China · Lightly Oxidised</p>
+            <p class="menu-card__desc">The Iron Goddess of Mercy. A floral, orchid-like fragrance that blooms across multiple infusions, finishing with a lingering sweetness.</p>
+            <div class="menu-card__tags">
+              <span>Floral</span><span>Orchid</span><span>Sweet</span>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Da Hong Pao</h3>
+              <span class="menu-card__price">$22</span>
+            </div>
+            <p class="menu-card__origin">Wuyi Mountains, China · Heavily Roasted</p>
+            <p class="menu-card__desc">Big Red Robe — one of China's most revered oolongs. Roasted over charcoal for a rich, mineral depth with notes of caramel and dark chocolate.</p>
+            <div class="menu-card__tags">
+              <span>Roasted</span><span>Mineral</span><span>Rich</span>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>White Peony (Bai Mudan)</h3>
+              <span class="menu-card__price">$12</span>
+            </div>
+            <p class="menu-card__origin">Fujian Province, China · White Tea</p>
+            <p class="menu-card__desc">Delicate and pale, with a soft sweetness and subtle floral notes. Minimal processing preserves the natural character of the young leaves.</p>
+            <div class="menu-card__tags">
+              <span>Delicate</span><span>Floral</span><span>Light</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Japanese Teas -->
+    <section class="menu-section menu-section--alt section">
+      <div class="container">
+        <div class="menu-section__header reveal">
+          <span class="section__label">Japanese Tradition</span>
+          <h2>Chanoyu Teas</h2>
+          <p class="menu-section__desc">Prepared with the mindful precision of the Japanese tea ceremony — each cup a moment of intentional stillness.</p>
+        </div>
+        <div class="menu-grid">
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Ceremonial Matcha</h3>
+              <span class="menu-card__price">$16</span>
+            </div>
+            <p class="menu-card__origin">Uji, Kyoto, Japan · Stone-ground</p>
+            <p class="menu-card__desc">First-flush shade-grown leaves, stone-ground to a vivid powder. Whisked to a luminous froth — grassy, umami-rich, and deeply serene.</p>
+            <div class="menu-card__tags">
+              <span>Umami</span><span>Grassy</span><span>Vibrant</span>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Gyokuro</h3>
+              <span class="menu-card__price">$20</span>
+            </div>
+            <p class="menu-card__origin">Yame, Fukuoka, Japan · Shade-grown</p>
+            <p class="menu-card__desc">Japan's most prized loose-leaf green tea. Shaded for three weeks before harvest, producing an intensely sweet, oceanic depth unlike any other.</p>
+            <div class="menu-card__tags">
+              <span>Sweet</span><span>Oceanic</span><span>Rare</span>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Hojicha</h3>
+              <span class="menu-card__price">$10</span>
+            </div>
+            <p class="menu-card__origin">Kyoto, Japan · Roasted Green Tea</p>
+            <p class="menu-card__desc">Roasted over charcoal at high heat, transforming green tea into a warm, toasty brew with low caffeine and a comforting caramel finish.</p>
+            <div class="menu-card__tags">
+              <span>Toasty</span><span>Caramel</span><span>Low Caffeine</span>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <div class="menu-card__top">
+              <h3>Genmaicha</h3>
+              <span class="menu-card__price">$10</span>
+            </div>
+            <p class="menu-card__origin">Japan · Green Tea with Roasted Rice</p>
+            <p class="menu-card__desc">Sencha blended with roasted brown rice. Nutty, warm, and approachable — a beloved everyday tea with a distinctly Japanese soul.</p>
+            <div class="menu-card__tags">
+              <span>Nutty</span><span>Warm</span><span>Approachable</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Seasonal & Specials -->
+    <section class="menu-section section">
+      <div class="container">
+        <div class="menu-section__header reveal">
+          <span class="section__label">Seasonal</span>
+          <h2>Chef's Selection</h2>
+          <p class="menu-section__desc">Rotating specials curated by our tea masters — available while stocks last.</p>
+        </div>
+        <div class="menu-grid menu-grid--wide">
+
+          <article class="menu-card menu-card--featured reveal">
+            <div class="menu-card__top">
+              <h3>Silver Needle (Bai Hao Yinzhen)</h3>
+              <span class="menu-card__price">$28</span>
+            </div>
+            <p class="menu-card__origin">Fuding, Fujian, China · White Tea · Seasonal</p>
+            <p class="menu-card__desc">The rarest of white teas — only the first unopened buds, harvested in early spring. Silky, honeyed, and impossibly light. A once-a-season offering.</p>
+            <div class="menu-card__tags">
+              <span>Rare</span><span>Honeyed</span><span>Spring Harvest</span>
+            </div>
+          </article>
+
+          <article class="menu-card menu-card--featured reveal">
+            <div class="menu-card__top">
+              <h3>Matcha x Pu'er Blend</h3>
+              <span class="menu-card__price">$20</span>
+            </div>
+            <p class="menu-card__origin">Japan × Yunnan · House Fusion</p>
+            <p class="menu-card__desc">Our signature creation — ceremonial matcha layered over a base of aged Pu'er. The meeting point of two traditions in a single, unforgettable cup.</p>
+            <div class="menu-card__tags">
+              <span>Fusion</span><span>Signature</span><span>Bold</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Note -->
+    <div class="menu-note reveal">
+      <div class="container">
+        <p>All teas are served with filtered spring water, heated to the optimal temperature for each variety. Refills available on request. Prices are per session.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 dsy teahouse. All rights reserved.</p>
+    <p class="footer__tagline"><em>Brewed with intention. Served with stillness.</em></p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

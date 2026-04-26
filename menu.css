@@ -1,0 +1,110 @@
+/* Menu Page Styles */
+
+/* Hero */
+.menu-hero {
+  padding: 10rem 2rem 5rem;
+  text-align: center;
+  background: var(--white);
+  border-bottom: 1px solid var(--straw);
+}
+.menu-hero__content { max-width: 600px; margin: 0 auto; }
+.menu-hero__content h1 { margin: 0.5rem 0 1rem; }
+.menu-hero__content p { font-size: 1.05rem; color: var(--ink-light); }
+
+/* Section header */
+.menu-section__header { text-align: center; margin-bottom: 3rem; }
+.menu-section__header h2 { margin: 0.5rem 0 0.75rem; }
+.menu-section__desc { max-width: 520px; margin: 0 auto; font-size: 0.95rem; }
+
+.menu-section--alt { background: var(--straw); }
+
+/* Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.menu-grid--wide {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Card */
+.menu-card {
+  background: var(--white);
+  padding: 1.75rem;
+  border-radius: 2px;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.menu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px rgba(44,44,44,0.13);
+}
+.menu-card--featured {
+  border-left: 3px solid var(--clay);
+}
+.menu-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.3rem;
+  gap: 1rem;
+}
+.menu-card__top h3 { color: var(--ink); font-size: 1.1rem; }
+.menu-card__price {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--clay);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.menu-card__origin {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 0.75rem;
+}
+.menu-card__desc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+.menu-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.menu-card__tags span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  background: var(--straw);
+  color: var(--ink);
+  border-radius: 50px;
+}
+
+/* Active nav link */
+.nav__active { color: var(--green) !important; }
+
+/* Note */
+.menu-note {
+  background: var(--ink);
+  padding: 2rem;
+  text-align: center;
+}
+.menu-note p {
+  color: rgba(245,242,235,0.55);
+  font-size: 0.85rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .menu-grid,
+  .menu-grid--wide { grid-template-columns: 1fr; }
+}
